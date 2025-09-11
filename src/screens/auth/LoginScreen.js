@@ -1,18 +1,16 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 export default function LoginScreen({ navigation }){
     return(
         <View style={styles.container}>
             <View>
-            <Image source={ require('./assets/images/Image_Login.png')} />
+            <Image source={ require('../../../assets/images/Image_Login.png')} />
             <View>
                 <View style={{ padding : 20}}>
-                <Image source={ require('./assets/ICON (2).svg')} />
                 <TextInput placeholder='Email' />
                 </View>
                 <View style={{ padding : 20}}>
-                <Image source={ require('./assets/ICON (2).svg')} />
                 <TextInput placeholder='Password' />
                 </View>
             </View>
@@ -20,7 +18,7 @@ export default function LoginScreen({ navigation }){
                 <Text style={styles.button_text}>Đăng nhập</Text>
             </TouchableOpacity>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={styles.text_register}>Bạn chưa có tài khoản? Đăng ký</Text>
+                <Text onPress={() => navigation.navigate("Register")} style={styles.text_register}>Bạn chưa có tài khoản? Đăng ký</Text>
             </View>
             </View>
             <StatusBar style="auto" />

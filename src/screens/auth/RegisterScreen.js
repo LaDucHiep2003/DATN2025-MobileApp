@@ -1,27 +1,29 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 export default function RegisterScreen({ navigation }){
     return(
         <View style={styles.container}>
             <View>
-            <Image source={ require('./assets/images/Image_Login.png')} />
-            <View>
-                <View style={{ padding : 20}}>
-                <Image source={ require('./assets/ICON (2).svg')} />
-                <TextInput placeholder='Email' />
-                </View>
-                <View style={{ padding : 20}}>
-                <Image source={ require('./assets/ICON (2).svg')} />
-                <TextInput placeholder='Password' />
-                </View>
-            </View>
-            <TouchableOpacity style={styles.button_login}>
-                <Text style={styles.button_text}>Đăng Ký</Text>
-            </TouchableOpacity>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={styles.text_register}>Bạn đã có tài khoản? Đăng nhập</Text>
-            </View>
+              <Image source={ require('../../../assets/images/Image_Login.png')} />
+              <View style={{ position: "absolute", top: 350, left: 0, right: 0 }}>
+                  <View style={{ padding : 20}}>
+                    <TextInput placeholder='Email' />
+                  </View>
+                  <View style={{ padding : 20}}>
+                    <TextInput placeholder='Password' />
+                  </View>
+                  <View style={{ padding : 20}}>
+                    <TextInput placeholder='Password Confirmation' />
+                  </View>
+                  <TouchableOpacity style={styles.button_login}>
+                      <Text style={styles.button_text}>Đăng Ký</Text>
+                  </TouchableOpacity>
+                  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                      <Text onPress={() => navigation.navigate("Login")} style={styles.text_register}>Bạn đã có tài khoản? Đăng nhập</Text>
+                  </View>
+              </View>
+              
             </View>
             <StatusBar style="auto" />
         </View>
@@ -45,11 +47,12 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 25,
     fontWeight: "600",
-    textAlign: 'center'
+    textAlign: 'center',
   },
   text_register:{
     color: "#757070",
     fontSize: 16,
     fontWeight: 700,
+    marginTop: 20
   }
 });
