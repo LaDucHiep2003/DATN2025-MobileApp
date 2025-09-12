@@ -15,7 +15,7 @@ export default function LoginScreen({ navigation }){
                 </View>
             </View>
             <TouchableOpacity style={styles.button_login}>
-                <Text style={styles.button_text}>Đăng nhập</Text>
+                <Text onPress={() => navigation.navigate("Home")} style={styles.button_text}>Đăng nhập</Text>
             </TouchableOpacity>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                 <Text onPress={() => navigation.navigate("Register")} style={styles.text_register}>Bạn chưa có tài khoản? Đăng ký</Text>

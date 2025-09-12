@@ -6,6 +6,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import LoginScreen from "../screens/auth/LoginScreen";
 import RegisterScreen from "../screens/auth/RegisterScreen";
+import HomeScreen from "../screens/home/HomeScreen";
+import VocabQuestScreen from "../screens/home/VocabQuestScreen";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,11 @@ export default function AppNavigator() {
         {/* Auth flow */}
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+
+        {/* Home flow */}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Vocab" component={VocabQuestScreen} />
+
 
       </Stack.Navigator>
     </NavigationContainer>
