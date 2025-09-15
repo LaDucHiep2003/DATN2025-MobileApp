@@ -53,7 +53,7 @@ export default function VocabQuestScreen({ navigation }){
                     icon={require("../../../assets/images/Lessons2.png")} // thay icon của bạn
                     title="Dictionary"
                 />
-                <TouchableOpacity style={[styles.card_lesson, styles.card_lesson_active]}>
+                <TouchableOpacity onPress={() => navigation.navigate("HomeTopic")} style={[styles.card_lesson, styles.card_lesson_active]}>
                     {/* Icon bên trái */}
                     <View style={styles.iconWrapper_lesson}>
                         <Image source={require("../../../assets/images/Lessons2.png")} style={styles.icon_lesson} />
